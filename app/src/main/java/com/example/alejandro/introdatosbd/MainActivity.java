@@ -29,6 +29,8 @@ import cz.msebera.android.httpclient.message.BasicNameValuePair;
 
 public class MainActivity extends AppCompatActivity {
 
+    //solo para prvar en donde esta mi primer commit
+
     EditText nombre, apellido, email, numeroTelefono, ciudad, direccionActual, password;
     Button guardar;
     HttpClient cliente;
