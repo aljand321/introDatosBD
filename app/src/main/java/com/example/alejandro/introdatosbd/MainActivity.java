@@ -40,24 +40,16 @@ import retrofit2.converter.gson.GsonConverterFactory;
 
 public class MainActivity extends AppCompatActivity {
 
+
     private Context PestMas;
 
-    //>>> esto es del video getInmuebles
-
-    private  final String baseUrl = "http://10.10.1.150:7777/";
-    RecyclerView rvInmuebles;
-    FloatingActionButton fabAdd;
-    List<GetInmueble> getInmuebles = new ArrayList<>();
-
-    InmuebleAdapter adapter;
-    //>>>>>>>
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        iniciarControles();
+
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
@@ -71,55 +63,13 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-       //>>> esto es partede getImuebles
-        Retrofit retrofit = new Retrofit.Builder().baseUrl(baseUrl)
-                .addConverterFactory(GsonConverterFactory.create()).build();
-
-        LinearLayoutManager inm = new LinearLayoutManager(getApplicationContext());
-        rvInmuebles.setLayoutManager(inm);
-
-        adapter = new InmuebleAdapter(getInmuebles);
-        rvInmuebles.setAdapter(adapter);
-
-        DividerItemDecoration itemDecoration = new DividerItemDecoration(rvInmuebles.getContext(),inm.getOrientation());
-        rvInmuebles.addItemDecoration(itemDecoration);
-
-
-
-        InmueblesGet inmueblesGet = retrofit.create(InmueblesGet.class);
-
-        Call<List<GetInmueble>> lista = inmueblesGet.getCasas();
-        lista.enqueue(new Callback<List<GetInmueble>>() {
-            @Override
-            public void onResponse(Call<List<GetInmueble>> call, Response<List<GetInmueble>> response) {
-                if(response.isSuccessful()){
-                    getInmuebles = response.body();
-                    adapter = new InmuebleAdapter(getInmuebles);
-                    rvInmuebles.setAdapter(adapter);
-                    adapter.notifyDataSetChanged();
-                }
-
-            }
-
-            @Override
-            public void onFailure(Call<List<GetInmueble>> call, Throwable t) {
-
-            }
-        });
-
-        //>>>
-
 
         PestMas = this;
         LoadComponets();
 
-        //esto es de get Inmuebles
-
     }
 
-    private void iniciarControles() {
-        
-    }
+
 
     private void LoadComponets() {
         Button btnMAs = (Button)this.findViewById(R.id.btn_mas);

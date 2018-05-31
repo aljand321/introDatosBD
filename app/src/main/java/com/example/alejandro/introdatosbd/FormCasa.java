@@ -56,7 +56,7 @@ public class FormCasa extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 if (correo.getText().toString().equals("")){
-                    Toast.makeText(FormCasa.this, "Usted no esta registrado", Toast.LENGTH_LONG).show();
+                    Toast.makeText(FormCasa.this, "Porfabor Introdusca su Email", Toast.LENGTH_LONG).show();
                 }else {
                     new FormCasa.EnviarDatos(FormCasa.this).execute();
                 }
