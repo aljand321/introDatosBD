@@ -24,7 +24,8 @@
         </activity>
         <activity android:name=".pestaniaMas" />
         <activity android:name=".usuario" />
-        <activity android:name=".regUsuario"></activity>
+        <activity android:name=".regUsuario" />
+        <activity android:name=".FormCasa"></activity>
     </application>
 
 </manifest>

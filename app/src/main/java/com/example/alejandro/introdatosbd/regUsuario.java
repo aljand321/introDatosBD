@@ -24,6 +24,8 @@ import cz.msebera.android.httpclient.client.methods.HttpPost;
 import cz.msebera.android.httpclient.impl.client.DefaultHttpClient;
 import cz.msebera.android.httpclient.message.BasicNameValuePair;
 
+
+
 public class regUsuario extends AppCompatActivity {
 
     EditText nombre, apellido, email, numeroTelefono, ciudad, direccionActual, password;
@@ -52,10 +54,12 @@ public class regUsuario extends AppCompatActivity {
                     Toast.makeText(regUsuario.this, "Nombre no puede ser vacio", Toast.LENGTH_LONG).show();
                 }else {
                     new EnviarDatos(regUsuario.this).execute();
+
+
+
                 }
             }
         });
-
 
     }
 
@@ -74,6 +78,8 @@ public class regUsuario extends AppCompatActivity {
                     @Override
                     public void run() {
                         Toast.makeText(contexto, "Datos enviados Existosamente", Toast.LENGTH_SHORT).show();
+                        Intent btnG = new Intent(regUsuario.this, MainActivity.class );
+                        regUsuario.this.startActivity(btnG);
                         nombre.setText("");
                         apellido.setText("");
                         email.setText("");
@@ -91,6 +97,7 @@ public class regUsuario extends AppCompatActivity {
                     @Override
                     public void run() {
                         Toast.makeText(contexto, "Datos no enviados", Toast.LENGTH_SHORT).show();
+
 
                     }
                 });

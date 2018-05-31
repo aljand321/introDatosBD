@@ -12,6 +12,7 @@ import javax.xml.transform.sax.TemplatesHandler;
 public class pestaniaMas extends AppCompatActivity {
 
     private Context inSesion;
+    private Context inCasa;
 
     //private Button USER;
 
@@ -22,6 +23,10 @@ public class pestaniaMas extends AppCompatActivity {
 
         inSesion = this;
         loadComponents();
+
+        inCasa = this;
+
+        CasaregInisio();
 
         /*USER = (Button) this.findViewById(R.id.btn_InicioSecion);
         USER.setOnClickListener(new View.OnClickListener() {
@@ -36,7 +41,20 @@ public class pestaniaMas extends AppCompatActivity {
 
     }
 
-   private void loadComponents() {
+    private void CasaregInisio() {
+
+        Button btnUser = (Button)this.findViewById(R.id.btn_añadirCasa); //En el id se coloca el boton que se va a usar
+        btnUser.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent us = new Intent(inCasa, FormCasa.class); //Se señala el class al cual se va a enlazar
+                inCasa.startActivity(us);
+            }
+        });
+    }
+
+
+    private void loadComponents() {
         Button btnUser = (Button)this.findViewById(R.id.btn_InicioSecion); //En el id se coloca el boton que se va a usar
         btnUser.setOnClickListener(new View.OnClickListener() {
             @Override
