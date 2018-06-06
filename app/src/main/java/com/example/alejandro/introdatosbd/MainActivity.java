@@ -23,9 +23,7 @@ import android.widget.GridLayout;
 import android.widget.LinearLayout;
 import android.widget.Toast;
 
-import com.example.alejandro.introdatosbd.ApiRest.InmuebleService;
-import com.example.alejandro.introdatosbd.models.InmuebleRespuesta;
-import com.example.alejandro.introdatosbd.models.Inmuebles;
+
 
 import java.io.IOException;
 import java.io.UnsupportedEncodingException;
@@ -51,11 +49,6 @@ public class MainActivity extends AppCompatActivity {
 
     private Context PestMas;
 
-    //>>> esto es para get inmuebles
-    private Retrofit retrofit;
-    private static final String TAG = "INMUEBLEX";
-    private RecyclerView recyclerView;
-    private ListaInmueblesAdapter listaInmueblesAdapter;
 
 
 
@@ -78,63 +71,11 @@ public class MainActivity extends AppCompatActivity {
         });
 
 
-
-
-        //>>>esto es para inmuebles
-
-        //recyclerView = findViewById(R.id.recyclerView);
-        listaInmueblesAdapter = new ListaInmueblesAdapter();
-        recyclerView.setAdapter(listaInmueblesAdapter);
-        recyclerView.setHasFixedSize(true);
-        GridLayoutManager layoutManager = new GridLayoutManager(this, 3);
-        recyclerView.setLayoutManager(layoutManager);
-
-
-        retrofit = new Retrofit.Builder().
-                baseUrl("http://pokeapi.co/api/v2/")
-                .addConverterFactory(GsonConverterFactory.create()).build();
-
-
-
-       // obtenerDatos();
-        //>>>
-
-
         PestMas = this;
         LoadComponets();
 
     }
-//>>> esot es de inmuebles
-  /*  private void obtenerDatos() {
 
-        InmuebleService service = retrofit.create(InmuebleService.class);
-           Call<InmuebleRespuesta> inmuebleRespuestaCall = service.obtenerListaInmueble();
-
-           inmuebleRespuestaCall.enqueue(new Callback<InmuebleRespuesta>() {
-               @Override
-               public void onResponse(Call<InmuebleRespuesta> call, Response<InmuebleRespuesta> response) {
-                   if (response.isSuccessful()){
-
-                       InmuebleRespuesta inmuebleRespuesta = response.body();
-                       ArrayList<Inmuebles> listaInmueble = inmuebleRespuesta.getResult();
-
-                            listaInmueblesAdapter.adicionarListaInmueble(listaInmueble);
-
-                       }
-
-                   }else{
-                       Log.e(TAG," onResponse: " + response.errorBody());
-                   }
-               }
-
-               @Override
-               public void onFailure(Call<InmuebleRespuesta> call, Throwable t) {
-                    Log.e(TAG, "onFailure: " + t.getMessage());
-               }
-           });
-
-    }*/
-//>>>
 
     private void LoadComponets() {
         Button btnMAs = (Button)this.findViewById(R.id.btn_mas);
