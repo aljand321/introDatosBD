@@ -25,7 +25,8 @@
         <activity android:name=".pestaniaMas" />
         <activity android:name=".usuario" />
         <activity android:name=".regUsuario" />
-        <activity android:name=".FormCasa"></activity>
+        <activity android:name=".FormCasa" />
+        <activity android:name=".ListFragmentCasa"/>
     </application>
 
 </manifest>

@@ -45,13 +45,8 @@ import retrofit2.converter.gson.GsonConverterFactory;
 
 public class MainActivity extends AppCompatActivity {
 
-
-
     private Context PestMas;
-
-
-
-
+    private Context Btn_buscar;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -74,6 +69,21 @@ public class MainActivity extends AppCompatActivity {
         PestMas = this;
         LoadComponets();
 
+        Btn_buscar = this ;
+        btncomponets();
+
+    }
+
+    private void btncomponets() {
+        Button btnB = (Button)this.findViewById(R.id.btn_buscar);
+        btnB.setOnClickListener(new View.OnClickListener(){
+
+            @Override
+            public void onClick(View v) {
+                Intent ubic = new Intent(Btn_buscar, ListFragmentCasa.class);
+                Btn_buscar.startActivity(ubic);
+            }
+        });
     }
 
 
