@@ -49,12 +49,24 @@ public class ListFragmentCasa extends Fragment {
                     JSONArray listData = response.getJSONArray("info");
                     for (int i = 0; i < listData.length(); i++) {
                         JSONObject obj = listData.getJSONObject(i);
+                        String tipo = obj.getString("tipo");
+                        String estado = obj.getString("esatdo");
+                        String precio = obj.getString("precio");
+                        String ciudad = obj.getString("ciudad");
+                        String cantidadCuartos = obj.getString("cantidadCuartos");
+                        String cantidadBaños = obj.getString("cantidadBaños");
+                        String correo = obj.getString("correo");
+                        DataApp.LISTDATA.add(new ItemMenuStructure(tipo, estado, precio, ciudad, cantidadCuartos,
+                                                cantidadBaños, correo ));
+
+                        /*
                         String titulo = obj.getString( "Title" );
                         String year = obj.getString( "Year" );
                         String imdbID = obj.getString( "imdbID" );
                         String type = obj.getString( "Type" );
                         String Poster = obj.getString( "Poster" );
-                        DataApp.LISTDATA.add(new ItemMenuStructure(titulo, year, imdbID, type, Poster ));
+                       // DataApp.LISTDATA.add(new ItemMenuStructure(titulo, year, imdbID, type, Poster ));
+                       */
                     }
                     LoadComponents();
                 } catch (JSONException e) {

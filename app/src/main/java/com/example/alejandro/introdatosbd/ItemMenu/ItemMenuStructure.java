@@ -3,45 +3,56 @@ package com.example.alejandro.introdatosbd.ItemMenu;
 import android.graphics.Bitmap;
 
 public class ItemMenuStructure {
-    private String url;
-    private Bitmap img;
-    private String title;
-    private String year;
-    private String type;
-    private String idimdb;
-    public  ItemMenuStructure (String urlimg, String title, String year, String type, String idimdb){
-        this.url = urlimg;
-        this.title = title;
-        this.year = year;
-        this.type = type;
-        this.idimdb = idimdb;
+
+    private String tipo;
+    private String estado;
+    private String precio;
+    private String ciudad;
+    private String cantidadCuartos;
+    private String cantidadBaños;
+    private String correo;
+
+    public  ItemMenuStructure (String tipo, String estado, String precio, String ciudad,
+                                String cantidadCuartos, String  cantidadBaños, String correo){
+
+        this.tipo = tipo;
+        this.estado = estado;
+        this.precio = precio;
+        this.ciudad = ciudad;
+        this.cantidadCuartos = cantidadCuartos;
+        this.cantidadBaños = cantidadBaños;
+        this.correo = correo;
+
     }
 
-    public String getUrlimg() {
-        return this.url;
+    public String getTipo(){
+        return this.tipo;
     }
 
-    public Bitmap getImg() {
-        return this.img;
+    public String getEstado(){
+        return this.estado;
     }
 
-    public void setImg(Bitmap img) {
-        this.img = img;
+    public String getPrecio(){
+        return this.precio;
     }
 
-    public String getTitle() {
-        return this.title;
+    public String getCiudad(){
+        return this.ciudad;
     }
 
-    public String getYear() {
-        return this.year;
+    public String getCantidadCuartos(){
+        return this.cantidadCuartos;
     }
 
-    public String getType() {
-        return this.type;
+    public String getCantidadBaos(){
+        return this.cantidadBaños;
     }
 
-    public  String getIdimdb(){
-        return this.idimdb;
+    public String getCorreo(){
+        return this.correo;
     }
+
+
+
 }

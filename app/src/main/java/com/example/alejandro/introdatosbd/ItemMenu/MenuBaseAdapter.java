@@ -50,12 +50,12 @@ public class MenuBaseAdapter extends BaseAdapter implements  OnLoadCompleImg{
         }
         ///<<<
         TextView title = (TextView)convertView.findViewById(R.id.txt_titulo);
-        TextView year = convertView.findViewById( R.id.txt_anio );
+        TextView year = (TextView) convertView.findViewById( R.id.txt_anio );
         TextView type = (TextView)convertView.findViewById( R.id.txt_tipo);
         ImageView img = convertView.findViewById( R.id.Img_casa );
-        title.setText( this.list.get(position).getTitle());
-        year.setText( this.list.get(position).getYear());
-        type.setText( this.list.get(position).getType());
+        title.setText( this.list.get(position).getTipo());
+        year.setText( this.list.get(position).getEstado());
+        type.setText( this.list.get(position).getPrecio());
         ///<<<<
         if (this.list.get(position).getImg() == null) {
             //Load IMG
