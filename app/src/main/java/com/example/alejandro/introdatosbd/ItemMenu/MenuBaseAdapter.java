@@ -49,19 +49,20 @@ public class MenuBaseAdapter extends BaseAdapter implements  OnLoadCompleImg{
             convertView = inflater.inflate(R.layout.casaitem, null);
         }
         ///<<<
-        TextView title = (TextView)convertView.findViewById(R.id.txt_titulo);
-        TextView year = (TextView) convertView.findViewById( R.id.txt_anio );
-        TextView type = (TextView)convertView.findViewById( R.id.txt_tipo);
+        TextView tipo = convertView.findViewById(R.id.getTxtTipo);
+        TextView estado = convertView.findViewById( R.id.getTxtEstado);
+        TextView precio = convertView.findViewById( R.id.getTxtPrecio);
         ImageView img = convertView.findViewById( R.id.Img_casa );
-        title.setText( this.list.get(position).getTipo());
-        year.setText( this.list.get(position).getEstado());
-        type.setText( this.list.get(position).getPrecio());
+        tipo.setText( this.list.get(position).getTipo());
+        estado.setText( this.list.get(position).getEstado());
+        precio.setText( this.list.get(position).getPrecio()+"");
+        counter.add(precio);
         ///<<<<
         if (this.list.get(position).getImg() == null) {
             //Load IMG
             LoaderImg loader = new LoaderImg();
             loader.setOnloadCompleteImg(img , position,this);
-            loader.execute(this.list.get(position).getUrlimg());
+            loader.execute(this.list.get(position).getUrl());
         } else {
             img.setImageBitmap(this.list.get(position).getImg());
         }

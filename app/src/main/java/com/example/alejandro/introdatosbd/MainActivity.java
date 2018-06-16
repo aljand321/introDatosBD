@@ -1,52 +1,24 @@
 package com.example.alejandro.introdatosbd;
 
-import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
-import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
+
+import android.support.v4.app.FragmentManager;
 import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.DividerItemDecoration;
-import android.support.v7.widget.GridLayoutManager;
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
-import android.util.Log;
 import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.Button;
-import android.widget.EditText;
-import android.widget.GridLayout;
-import android.widget.LinearLayout;
 import android.widget.Toast;
-
-
-
-import java.io.IOException;
-import java.io.UnsupportedEncodingException;
-import java.util.ArrayList;
-import java.util.List;
-
-import cz.msebera.android.httpclient.NameValuePair;
-import cz.msebera.android.httpclient.client.ClientProtocolException;
-import cz.msebera.android.httpclient.client.HttpClient;
-import cz.msebera.android.httpclient.client.entity.UrlEncodedFormEntity;
-import cz.msebera.android.httpclient.client.methods.HttpPost;
-import cz.msebera.android.httpclient.impl.client.DefaultHttpClient;
-import cz.msebera.android.httpclient.message.BasicNameValuePair;
-import retrofit2.Call;
-import retrofit2.Callback;
-import retrofit2.Response;
-import retrofit2.Retrofit;
-import retrofit2.converter.gson.GsonConverterFactory;
 
 public class MainActivity extends AppCompatActivity {
 
 
-
+    private Context root;
     private Context PestMas;
     private Context Btn_buscar;
     @Override
@@ -67,11 +39,11 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-
+        root = this;
         PestMas = this;
         LoadComponets();
 
-        Btn_buscar = this ;
+       Btn_buscar = this ;
         btncomponets();
 
     }
@@ -82,8 +54,14 @@ public class MainActivity extends AppCompatActivity {
 
             @Override
             public void onClick(View v) {
-                Intent ubic = new Intent(Btn_buscar, ListFragmentCasa.class);
-                Btn_buscar.startActivity(ubic);
+                Toast.makeText(root,"aqui esta ",Toast.LENGTH_SHORT).show();
+                FragmentManager fragment = getSupportFragmentManager();
+                //<<<
+                ListFragmentCasa casa = new ListFragmentCasa();
+
+                fragment.beginTransaction().add(R.id.contenedorcasa,casa).commit();
+
+
             }
         });
     }
