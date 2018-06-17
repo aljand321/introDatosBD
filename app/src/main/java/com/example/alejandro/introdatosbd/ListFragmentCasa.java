@@ -30,19 +30,13 @@ import cz.msebera.android.httpclient.Header;
 public class ListFragmentCasa extends Fragment {
     private View ROOT;
     private OnLoadDataComplete event;
-
-
-
-
-
     @Override
-    public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, Bundle savedInstanceState) {
-        DataApp.LISTDATA = new ArrayList<ItemMenuStructure>(  );
+    public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
+        DataApp.LISTDATA = new ArrayList<ItemMenuStructure>();
         ROOT = inflater.inflate(R.layout.activity_list_fragment_casa, container, false);
         loadData();
         return ROOT;
     }
-
     public void setOnloadCompleteData (OnLoadDataComplete event) {
         this.event = event;
     }
@@ -56,7 +50,7 @@ public class ListFragmentCasa extends Fragment {
                     for (int i = 0; i < listData.length(); i++) {
                         JSONObject obj = listData.getJSONObject(i);
                         String tipo = obj.getString("tipo");
-                        String estado = obj.getString("estado   ");
+                        String estado = obj.getString("estado");
                         String precio = obj.getString("precio");
                         String ciudad = obj.getString("ciudad");
                         String cantidadCuartos = obj.getString("cantidadCuartos");
@@ -67,14 +61,16 @@ public class ListFragmentCasa extends Fragment {
                         DataApp.LISTDATA.add(new ItemMenuStructure(tipo,estado, precio, ciudad , "","","",cantidadCuartos,
                                 cantidadBaños,"","",correo,"",id,url));
 
-                        /*
-                        String titulo = obj.getString( "Title" );
-                        String year = obj.getString( "Year" );
-                        String imdbID = obj.getString( "imdbID" );
-                        String type = obj.getString( "Type" );
-                        String Poster = obj.getString( "Poster" );
-                       // DataApp.LISTDATA.add(new ItemMenuStructure(titulo, year, imdbID, type, Poster ));
-                       */
+                        /* JSONObject obj = listData.getJSONObject(i);
+                        String street = obj.getString("street");
+                        Integer price = obj.getInt("price");
+                        double lat = obj.getDouble("lat");
+                        double lon = obj.getDouble("lon");
+                        String contact = obj.getString("contact");
+                        String id = obj.getString("_id");
+                        String url = (String)obj.getJSONArray("gallery").get(0);
+                        DataApp.LISTDATA.add(new ItemMenuStructure(street, url, price, lat, lon, contact,
+                                "", "", id,""));*/
                     }
                     LoadComponents();
                 } catch (JSONException e) {
