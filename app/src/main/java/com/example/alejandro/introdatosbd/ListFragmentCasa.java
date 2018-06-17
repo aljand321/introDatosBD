@@ -56,7 +56,7 @@ public class ListFragmentCasa extends Fragment {
                     for (int i = 0; i < listData.length(); i++) {
                         JSONObject obj = listData.getJSONObject(i);
                         String tipo = obj.getString("tipo");
-                        String estado = obj.getString("estado");
+                        String estado = obj.getString("estado   ");
                         String precio = obj.getString("precio");
                         String ciudad = obj.getString("ciudad");
                         String cantidadCuartos = obj.getString("cantidadCuartos");
@@ -64,8 +64,8 @@ public class ListFragmentCasa extends Fragment {
                         String correo = obj.getString("correo");
                         String id = obj.getString("_id");
                         String url = (String)obj.getJSONArray("gallery").get(0);
-                        DataApp.LISTDATA.add(new ItemMenuStructure(tipo,estado,precio,ciudad,"","",
-                                cantidadCuartos,cantidadBaños,correo, id, url,"","","","",""));
+                        DataApp.LISTDATA.add(new ItemMenuStructure(tipo,estado, precio, ciudad , "","","",cantidadCuartos,
+                                cantidadBaños,"","",correo,"",id,url));
 
                         /*
                         String titulo = obj.getString( "Title" );

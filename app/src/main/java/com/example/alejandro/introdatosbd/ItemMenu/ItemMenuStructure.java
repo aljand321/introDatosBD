@@ -9,7 +9,6 @@ public class ItemMenuStructure {
     private String precio;
     private String ciudad;
     private String region;
-    private String direccion;
     private String ubicacion;
     private String descripcion;
     private String cantidadCuartos;
@@ -23,7 +22,7 @@ public class ItemMenuStructure {
     private String id;
 
     public ItemMenuStructure (String tipo, String esatado, String precio, String  ciudad, String region,
-                              String direccion, String ubicacion, String descripcion, String cantidadCuartos,
+                              String ubicacion, String descripcion, String cantidadCuartos,
                               String cantidadBaños, String garage, String superficie, String correo, String user,
                               String urlimg, String id ) {
         this.tipo = tipo;
@@ -31,7 +30,6 @@ public class ItemMenuStructure {
         this.precio = precio;
         this.ciudad = ciudad;
         this.region = region;
-        this.direccion = direccion;
         this.ubicacion = ubicacion;
         this.descripcion = descripcion;
         this.cantidadCuartos = cantidadCuartos;
@@ -82,14 +80,6 @@ public class ItemMenuStructure {
 
     public void setRegion(String region) {
         this.region = region;
-    }
-
-    public String getDireccion() {
-        return direccion;
-    }
-
-    public void setDireccion(String direccion) {
-        this.direccion = direccion;
     }
 
     public String getUbicacion() {

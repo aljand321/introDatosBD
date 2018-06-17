@@ -25,8 +25,15 @@
         <activity android:name=".pestaniaMas" />
         <activity android:name=".usuario" />
         <activity android:name=".regUsuario" />
-        <activity android:name=".FormCasa" />
-        
+        <activity android:name=".FormCasa" >
+
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
     </application>
 
 </manifest>

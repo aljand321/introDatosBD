@@ -78,7 +78,7 @@ public class FormCasa extends AppCompatActivity {
                 contexto.runOnUiThread(new Runnable() {
                     @Override
                     public void run() {
-                        Toast.makeText(contexto, "Datos enviados Existosamente", Toast.LENGTH_SHORT).show();
+
                         tipo.setText("");
                         estado.setText("");
                         precio.setText("");
@@ -91,6 +91,7 @@ public class FormCasa extends AppCompatActivity {
                         garage.setText("");
                         superficie.setText("");
                         correo.setText("");
+                        Toast.makeText(contexto, "Datos enviados Existosamente", Toast.LENGTH_SHORT).show();
 
                     }
                 });
