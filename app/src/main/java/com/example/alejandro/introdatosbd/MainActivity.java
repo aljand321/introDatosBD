@@ -50,14 +50,14 @@ public class MainActivity extends AppCompatActivity {
 
     private void btncomponets() {
         Button btnB = (Button)this.findViewById(R.id.btn_buscar);
-        btnB.setOnClickListener(new View.OnClickListener(){
+            btnB.setOnClickListener(new View.OnClickListener(){
 
             @Override
             public void onClick(View v) {
                 Toast.makeText(root,"aqui esta ",Toast.LENGTH_SHORT).show();
                 FragmentManager fragment = getSupportFragmentManager();
                 //<<<
-                ListFragmentCasa casa = new ListFragmentCasa();
+                ListCasaFragment casa = new ListCasaFragment();
 
                 fragment.beginTransaction().add(R.id.contenedorcasa,casa).commit();
 
