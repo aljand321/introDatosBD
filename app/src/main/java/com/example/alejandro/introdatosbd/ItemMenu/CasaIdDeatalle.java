@@ -1,4 +1,4 @@
-package com.example.hp.interfacegrafic.ItemMenu;
+package com.example.alejandro.introdatosbd.ItemMenu;
 
 public class CasaIdDeatalle {
 
@@ -11,14 +11,14 @@ public class CasaIdDeatalle {
     private String superficie;
     private String user;
 
-    public CasaIdDeatalle (String tipo,
-                           String estado,
-                           String precio,
-                           String region,
-                           String descripcion,
-                           String cantidadCuartos,
-                           String superficie,
-                           String user){
+    public CasaIdDeatalle(String tipo,
+                          String estado,
+                          String precio,
+                          String region,
+                          String descripcion,
+                          String cantidadCuartos,
+                          String superficie,
+                          String user){
 
         this.tipo = tipo;
         this.esatado = estado;

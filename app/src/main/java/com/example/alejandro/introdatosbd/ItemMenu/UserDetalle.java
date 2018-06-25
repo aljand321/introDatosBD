@@ -1,4 +1,4 @@
-package com.example.hp.interfacegrafic.ItemMenu;
+package com.example.alejandro.introdatosbd.ItemMenu;
 
 public class UserDetalle {
 
